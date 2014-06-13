@@ -11,22 +11,27 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate, SRWebSocketDelegate, NSUserNotificationCenterDelegate {
                             
     @IBOutlet var window: NSWindow
+    @IBOutlet var usernameField: NSTextField
+    @IBOutlet var passwordField: NSTextField
 
+    @IBAction func logIn(sender: AnyObject?) {
+        fetchMyPlexToken(usernameField.stringValue, password: passwordField.stringValue)
+    }
 
     func applicationDidFinishLaunching(aNotification: NSNotification?) {
         // Insert code here to initialize your application
-        fetchMyPlexToken()
+        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
     }
 
     func applicationWillTerminate(aNotification: NSNotification?) {
         // Insert code here to tear down your application
     }
 
-    func fetchMyPlexToken() {
+    func fetchMyPlexToken(username: String, password: String) {
         let manager = AFHTTPRequestOperationManager()
         manager.requestSerializer = AFJSONRequestSerializer()
         manager.responseSerializer = AFJSONResponseSerializer()
-        manager.requestSerializer.setAuthorizationHeaderFieldWithUsername("PLEXUSERNAME", password: "PLEXPASSWORD")
+        manager.requestSerializer.setAuthorizationHeaderFieldWithUsername(username, password: password)
         manager.requestSerializer.setValue("PlexNotifier for OS X", forHTTPHeaderField: "X-Plex-Client-Identifier")
         
         //post to our sign in
@@ -39,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SRWebSocketDelegate, NSUserN
                 let serverClient = PlexServerRequestManager.init(baseURL: NSURL.URLWithString("http://server.example.com:32400"))
                 serverClient.getCurrentSessions();
             }
-            
+            self.window.close()
         }, failure: {(operation: AFHTTPRequestOperation!, error: NSError!) in
             NSLog("Failed login")
         })
