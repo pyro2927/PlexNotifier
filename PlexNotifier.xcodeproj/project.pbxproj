@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		858DFADB00D94B1089D53C5E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6CAB0B9CC14106A96969F0 /* libPods.a */; };
+		D8859B8E194A97D800B616C8 /* MyPlexRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8859B8D194A97D800B616C8 /* MyPlexRequestManager.swift */; };
 		D886A18619454FFB00DCF328 /* PlexServerRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D886A18519454FFB00DCF328 /* PlexServerRequestManager.swift */; };
 		D8CC9A971944A3A9006D3EB1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC9A961944A3A9006D3EB1 /* main.swift */; };
 		D8CC9A991944A3A9006D3EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CC9A981944A3A9006D3EB1 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		0034879F6C1B4723B6F1C771 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BC6CAB0B9CC14106A96969F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8859B8D194A97D800B616C8 /* MyPlexRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPlexRequestManager.swift; sourceTree = "<group>"; };
 		D886A18519454FFB00DCF328 /* PlexServerRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlexServerRequestManager.swift; sourceTree = "<group>"; };
 		D8CC9A911944A3A9006D3EB1 /* PlexNotifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlexNotifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CC9A951944A3A9006D3EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			children = (
 				D8CC9A981944A3A9006D3EB1 /* AppDelegate.swift */,
 				D886A18519454FFB00DCF328 /* PlexServerRequestManager.swift */,
+				D8859B8D194A97D800B616C8 /* MyPlexRequestManager.swift */,
 				D8CC9A9A1944A3A9006D3EB1 /* Images.xcassets */,
 				D8CC9A9C1944A3A9006D3EB1 /* MainMenu.xib */,
 				D8CC9A941944A3A9006D3EB1 /* Supporting Files */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8859B8E194A97D800B616C8 /* MyPlexRequestManager.swift in Sources */,
 				D8CC9A991944A3A9006D3EB1 /* AppDelegate.swift in Sources */,
 				D8CC9A971944A3A9006D3EB1 /* main.swift in Sources */,
 				D886A18619454FFB00DCF328 /* PlexServerRequestManager.swift in Sources */,

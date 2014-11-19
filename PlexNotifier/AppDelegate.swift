@@ -41,7 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SRWebSocketDelegate, NSUserN
                 var token: String = user["authentication_token"] as String
                 NSLog(token)
                 self.connectToWebSocket(token)
-                let serverClient = PlexServerRequestManager.init(baseURL: NSURL.URLWithString("http://server.example.com:32400"))
+                let serverClient = PlexServerRequestManager.init(baseURL: NSURL.URLWithString("http://cortana.pintozzi.com:32400"))
                 serverClient.getCurrentSessions();
             }
             self.window.close()
@@ -51,7 +51,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, SRWebSocketDelegate, NSUserN
     }
     
     func connectToWebSocket(authenticationToken: String!) {
-        let url:NSURL = NSURL(string:"http://server.example.com:32400/:/websockets/notifications?X-Plex-Token=" + authenticationToken)
+        let url:NSURL = NSURL(string:"http://cortana.pintozzi.com:32400/:/websockets/notifications?X-Plex-Token=" + authenticationToken)
         let request:NSURLRequest = NSURLRequest(URL:url)
         let websocket = SRWebSocket(URLRequest: request)
         websocket.delegate = self
